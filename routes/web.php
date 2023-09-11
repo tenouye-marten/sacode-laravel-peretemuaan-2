@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DashboardControler;
+use App\Http\Controllers\DataSiswaControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+Route::get('/dasbor', [DashboardControler::class, 'index']);
+Route::get('/about', [DashboardControler::class, 'about']);
